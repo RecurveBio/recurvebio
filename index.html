@@ -1,111 +1,40 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>RecurveBio</title>
-
-<style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f8fafc;
-    color: #333;
-}
-
-header {
-    background: #0b1f3a;
-    color: white;
-    text-align: center;
-    padding: 100px 20px;
-}
-
-section {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 40px;
-    background: white;
-    border-radius: 12px;
-}
-
-h1, h2 {
-    color: #0b1f3a;
-}
-
-.button {
-    display: inline-block;
-    background: #00a8a8;
-    color: white;
-    text-decoration: none;
-    padding: 12px 24px;
-    border-radius: 6px;
-}
-
-footer {
-    background: #0b1f3a;
-    color: white;
-    text-align: center;
-    padding: 20px;
-}
-</style>
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="RecurveBio transforms industrial wastewater into valuable biological products using an adaptable microalgae conversion platform.">
+  <title>RecurveBio | Circular biomanufacturing</title>
+  <style>
+    :root{--navy:#062d5b;--green:#4a9d34;--deep:#0b4439;--mint:#d8efcf;--pale:#f3f8f1;--ink:#15322b;--white:#fff;--line:#dce8dd}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:#fff;line-height:1.55}
+    a{color:inherit}.wrap{width:min(1160px,calc(100% - 40px));margin:auto}
+    header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}
+    nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{text-decoration:none;font-size:31px;font-weight:700;letter-spacing:-1.5px;color:var(--navy)}.brand .c{color:var(--green)}.brand small{display:block;margin-top:-8px;text-align:right;font-size:13px;letter-spacing:3px;color:var(--green)}
+    .links{display:flex;gap:26px;align-items:center}.links a{text-decoration:none;font-size:14px;font-weight:700}.button{display:inline-block;border-radius:7px;padding:12px 18px;background:var(--green);color:#fff!important;text-decoration:none;font-weight:700}.menu{display:none;background:none;border:0;font-size:27px;color:var(--navy)}
+    .hero{background:linear-gradient(120deg,#eff8ec 0%,#fff 62%);padding:80px 0 66px}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}.eyebrow{color:var(--green);text-transform:uppercase;font-weight:800;letter-spacing:1.4px;font-size:13px}.hero h1{margin:10px 0 20px;color:var(--navy);font-size:clamp(42px,5.5vw,70px);line-height:1.02;letter-spacing:-2.5px}.hero p{font-size:20px;max-width:650px}.actions{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}.button.alt{background:transparent;color:var(--navy)!important;border:2px solid var(--navy)}
+    .hero-card{background:var(--deep);color:#fff;border-radius:26px;padding:34px;box-shadow:0 24px 60px rgba(6,45,91,.15)}.hero-card h2{font-size:25px;margin:0 0 12px}.hero-image-card{padding:12px;background:#fff}.hero-image-card img{display:block;width:100%;border-radius:17px}.image-note{margin:10px 8px 4px;color:var(--deep);font-size:13px;font-weight:700;text-align:center}.flow{margin-top:25px;display:grid;gap:13px}.flow div{display:flex;align-items:center;gap:14px;padding:13px;border-radius:12px;background:rgba(255,255,255,.08)}.num{display:grid;place-items:center;flex:0 0 34px;height:34px;border-radius:50%;background:var(--green);font-weight:800}
+    section{padding:78px 0}.section-head{max-width:760px;margin-bottom:38px}.section-head h2{color:var(--navy);font-size:clamp(31px,4vw,45px);letter-spacing:-1.2px;line-height:1.08;margin:7px 0 14px}.section-head p{font-size:18px}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.card{border:1px solid var(--line);border-radius:18px;padding:27px;background:#fff}.card strong{display:block;color:var(--navy);font-size:20px;margin-bottom:7px}.icon{display:grid;place-items:center;width:45px;height:45px;margin-bottom:20px;border-radius:50%;background:var(--mint);color:var(--deep);font-weight:800;font-size:20px}
+    .platform{background:var(--pale)}.platform-grid{display:grid;grid-template-columns:.88fr 1.12fr;gap:48px;align-items:center}.platform ul{padding-left:19px}.platform li{margin:12px 0}.visual{background:#fff;padding:12px;border:1px solid var(--line);border-radius:20px;box-shadow:0 16px 45px rgba(6,45,91,.09)}.visual img{width:100%;display:block;border-radius:12px}.partner-banner{max-width:1100px;margin:0 auto}.collaborators{padding-top:70px;padding-bottom:35px}
+    .value{background:var(--navy);color:#fff}.value .section-head h2,.value .eyebrow{color:#fff}.value-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}.value-box{border-radius:18px;padding:28px;background:rgba(255,255,255,.09)}.value-box h3{font-size:23px;margin-top:0}.value-box li{margin:9px 0}
+    .partner{text-align:center}.partner .section-head{margin-left:auto;margin-right:auto}.contact{display:flex;justify-content:center;gap:15px;flex-wrap:wrap}
+    footer{background:#082d29;color:#dceddf;padding:28px 0;font-size:14px}.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    @media(max-width:800px){.links{display:none;position:absolute;top:76px;left:0;right:0;padding:22px;background:#fff;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start}.links.open{display:flex}.menu{display:block}.hero{padding-top:52px}.hero-grid,.platform-grid,.value-grid{grid-template-columns:1fr}.cards{grid-template-columns:1fr}.hero h1{letter-spacing:-1.5px}.wrap{width:min(100% - 28px,1160px)}}
+  </style>
 </head>
-
 <body>
-
-<header>
-<h1>RecurveBio</h1>
-
-<p>
-Innovating at the intersection of biology, technology,
-and scientific discovery.
-</p>
-
-<br>
-
-<a class="button" href="mailto:hello@recurvebio.co.uk">
-Contact Us
-</a>
-
-</header>
-
-<section>
-<h2>Our Mission</h2>
-
-<p>
-RecurveBio exists to advance biological innovation through scientific curiosity,
-rigorous research, and collaborative thinking. Our ambition is to contribute to
-technologies and solutions that improve human health and deepen our understanding
-of biological systems.
-</p>
-</section>
-
-<section>
-<h2>About</h2>
-
-<p>
-Recurve Bio is developing an algal biotechnology platform that converts industrial wastewater into sustainable oils and other high-value bioproducts. 
-Our initial focus is on brewery and distillery effluent streams, helping manufacturers reduce waste treatment costs while creating new sources of value. 
-By combining wastewater remediation with resource recovery, we aim to support the transition to a circular bioeconomy. We are currently advancing proof-of-concept activities 
-and building strategic partnerships across industry and academia, with a long-term vision of producing sustainable alternatives to conventional agricultural oils from industrial waste streams.
-</p>
-</section>
-
-<section>
-<h2>Get In Touch</h2>
-
-<p>
-📧 hello@recurvebio.co.uk
-</p>
-
-<p>
-</p>
-
-</section>
-
-<footer>
-© 2026 RecurveBio Ltd.
-</footer>
-
-</body>
-</html>
+<header><div class="wrap"><nav aria-label="Main navigation"><a class="brand" href="#top">Re<span class="c">C</span>urve<small>BIO</small></a><button class="menu" type="button" aria-label="Open menu" aria-expanded="false">☰</button><div class="links"><a href="#about">About</a><a href="#platform">Platform</a><a href="#value">Value</a><a href="#collaborate">Collaborate</a><a class="button" href="mailto:info@recurvebio.co.uk">Contact us</a></div></nav></div></header>
+<main id="top">
+<section class="hero"><div class="wrap hero-grid"><div><div class="eyebrow">Circular biomanufacturing</div><h1>Turning industrial wastewater into valuable biological products.</h1><p>RecurveBio is developing an adaptable microalgae conversion platform that helps industrial partners reduce wastewater burden and create new, higher-value product pathways.</p><div class="actions"><a class="button" href="#collaborate">Work with us</a><a class="button alt" href="#platform">Explore the platform</a></div></div><div class="hero-card hero-image-card"><img src="images/recurvebio-brewery-module.jpg" alt="Illustrative RecurveBio on-site brewery configuration showing wastewater entering a biological conversion module and producing biomass products and lower-COD water"><p class="image-note">Illustrative on-site configuration</p></div></div></section>
+<section id="about"><div class="wrap"><div class="section-head"><div class="eyebrow">Our focus</div><h2>Building value into the wastewater treatment journey</h2><p>Industrial wastewater is abundant and costly to treat. RecurveBio is developing a modular biological conversion approach that uses these streams as feedstocks, starting with brewery and food-manufacturing applications.</p></div><div class="cards"><article class="card"><div class="icon">01</div><strong>Reduce wastewater burden</strong><span>Target lower organic loading at source and support reduced treatment requirements.</span></article><article class="card"><div class="icon">02</div><strong>Produce saleable biomass</strong><span>Convert recovered nutrients into biomass and hydrolysate product opportunities.</span></article><article class="card"><div class="icon">03</div><strong>Build higher-value pathways</strong><span>Develop functional fractions and specialist ingredient opportunities.</span></article></div></div></section>
+<section class="platform" id="platform"><div class="wrap platform-grid"><div><div class="eyebrow">The RecurveBio platform</div><h2 style="color:var(--navy);font-size:42px;line-height:1.08;margin:10px 0 18px">Adaptable biology. Scalable process. Multiple end markets.</h2><p>The platform brings together feedstock assessment, microalgae cultivation and downstream product development.</p><ul><li><b>Industrial feedstocks:</b> nutrient-rich wastewater across sites, batches and seasons.</li><li><b>Proprietary biology:</b> culture matching and process optimisation for variable conditions.</li><li><b>Scalable process:</b> repeatable cultivation and bioprocessing designed for industrial operation.</li><li><b>High-value products:</b> biomass, proteins, lipids and functional bio-based ingredients.</li></ul></div><figure class="visual"><img src="images/recurvebio-platform.jpg" alt="RecurveBio platform diagram showing industrial feedstocks, proprietary biology, scalable process, high-value products and customer value"></figure></div></section>
+<section class="value" id="value"><div class="wrap"><div class="section-head"><div class="eyebrow">Shared value</div><h2>A compelling model for industrial partners and RecurveBio</h2></div><div class="value-grid"><div class="value-box"><h3>Value for industrial partners</h3><ul><li>Potential reduction in wastewater treatment burden</li><li>Integration with existing site infrastructure</li><li>New value from underused process streams</li><li>Measurable circular-manufacturing benefits</li></ul></div><div class="value-box"><h3>Value for RecurveBio</h3><ul><li>Access to low-cost industrial feedstocks</li><li>Biomass and ingredient revenue pathways</li><li>Validation through real operating environments</li><li>A repeatable deployment model across sites</li></ul></div></div></div></section>
+<section class="collaborators" id="partners"><div class="wrap"><div class="section-head"><div class="eyebrow">Industry engagement and partnerships</div><h2>Working across science, engineering and market validation</h2></div><figure class="visual partner-banner"><img src="images/recurvebio-collaborations.jpg" alt="RecurveBio industry engagement and partnerships banner grouping science and engineering, brewery validation, and market and end-user engagement organisations"></figure></div></section>
+<section class="partner" id="collaborate"><div class="wrap"><div class="section-head"><div class="eyebrow">Collaborate</div><h2>Help shape the next generation of circular biomanufacturing</h2><p>We are building partnerships with breweries, food and beverage manufacturers, research organisations and ingredient companies to validate feedstocks, optimise the platform and develop commercially relevant products.</p></div><div class="contact"><a class="button" href="mailto:info@recurvebio.co.uk?subject=RecurveBio%20collaboration">Discuss a collaboration</a><a class="button alt" href="mailto:info@recurvebio.co.uk?subject=Industrial%20waste%20stream">Discuss a waste stream</a></div></div></section>
+</main>
+<footer><div class="wrap foot"><span>© 2026 RecurveBio Ltd</span><span>Circular biomanufacturing | United Kingdom</span></div></footer>
+<script>
+const root=document;const btn=root.querySelector('.menu');const links=root.querySelector('.links');btn.addEventListener('click',()=>{const open=links.classList.toggle('open');btn.setAttribute('aria-expanded',String(open));});links.addEventListener('click',()=>{links.classList.remove('open');btn.setAttribute('aria-expanded','false');});
+</script>
+</body></html>
